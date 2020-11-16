@@ -19,7 +19,7 @@ jobs:
           node-version: 12
       - run: yarn install
       - run: yarn lint
-  test:
+  unit-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
