@@ -1,4 +1,5 @@
 # Builds the project with Docker and pushes built image to GitHub Container Registry
+# Requires the $CR_PAT secret to be set on your repo!
 # See /Dockerfile for docker build instructions
 name: Push docker image
 on: [push]
