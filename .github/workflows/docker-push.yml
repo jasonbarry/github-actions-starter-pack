@@ -1,3 +1,5 @@
+# Builds the project with Docker and pushes built image to GitHub Container Registry
+# See /Dockerfile for docker build instructions
 name: Push docker image
 on: [push]
 jobs:
