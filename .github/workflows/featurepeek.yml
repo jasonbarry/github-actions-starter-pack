@@ -1,0 +1,25 @@
+name: featurepeek
+on: [push]
+jobs:
+  ping-featurepeek:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Cache node modules
+            uses: actions/cache@v1
+            with:
+              path: node_modules
+              key: ${{ runner.OS }}-build-${{ hashFiles('yarn.lock') }}
+              restore-keys: |
+                ${{ runner.OS }}-build-${{ env.cache-name }}-
+                ${{ runner.OS }}-build-
+                ${{ runner.OS }}-
+      - name: Install dependencies
+        run: yarn install
+      - name: Build and export frontend assets
+        run: yarn build
+      - name: Ping FeaturePeek
+        run: bash <(curl -s https://peek.run/ci)
