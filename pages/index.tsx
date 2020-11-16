@@ -13,12 +13,12 @@ export const Home = (): JSX.Element => (
       </h1>
 
       <p className="description">
-        Get started by editing <code>pages/index.tsx</code>
+        Get started by editing <code>pages/index.tsx</code>. Oops I didn't update the snapshot! 
       </p>
 
       <button
         onClick={() => {
-          window.alert('With typescript and Jest')
+          window.alert('With Typescript and Jest')
         }}
       >
         Test Button
